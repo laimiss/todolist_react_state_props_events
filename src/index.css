@@ -1,0 +1,17 @@
+.done {
+    text-decoration: line-through;
+}
+
+table {
+    border: 2px solid gray;
+    border-collapse: collapse;
+    margin: 1em;
+}
+
+thead {
+    background-color: bisque;
+}
+
+input {
+    margin: 1em;
+}
