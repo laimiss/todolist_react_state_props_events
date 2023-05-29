@@ -1,22 +1,20 @@
-import { useState } from "react"
+import { useRef } from "react"
 
 const FormForTask = ({ addToDo }) => {
-    const [newTask, setNewTask] = useState('')
-
+    const inputas = useRef()
     const handleSubmit = e => {
         e.preventDefault()
-        if (!newTask) return
+        if (!inputas.current.value) return
 
-        addToDo(newTask)
-        setNewTask('')
+        addToDo(inputas.current.value)
+        inputas.current.value = ""
     }
     return (
         <form onSubmit={handleSubmit}>
             <input
+                ref={inputas}
                 type="text"
                 placeholder="Enter new task..."
-                value={newTask}
-                onChange={e => setNewTask(e.target.value)}
             />
         </form>
     )
